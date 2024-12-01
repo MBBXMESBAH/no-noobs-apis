@@ -1,0 +1,23 @@
+{
+  "name": "@saxx/no-noobs-apis",
+  "version": "1.0.0",
+  "description": "A collection of easy-to-use APIs, including imageToPrompt API and more to come.",
+  "main": "index.js",
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Mesbah Saxx",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MBBXMESBAH/no-noobs-apis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MBBXMESBAH/no-noobs-apis/issues"
+  },
+  "homepage": "https://github.com/MBBXMESBAH/no-noobs-apis#readme",
+  "dependencies": {
+    "axios": "^1.7.8"
+  }
+}
