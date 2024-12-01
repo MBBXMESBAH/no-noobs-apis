@@ -2,8 +2,13 @@
   "name": "@saxx/no-noobs-apis",
   "version": "1.0.0",
   "description": "A collection of easy-to-use APIs, including imageToPrompt API and more to come.",
-  "main": "index.js",
-  "keywords": [],
+  "main": "test/test.js",
+  "keywords": [
+    "Mesbah Saxx",
+    "SAXX API",
+    "SAXX APIS",
+    "APIS"
+  ],
   "publishConfig": {
     "access": "public"
   },
