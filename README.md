@@ -1,4 +1,3 @@
-```markdown
 # NO-NOOBS-APIS
 
 @saxx/no-noobs-apis is a collection of powerful and easy-to-use APIs designed to enhance your projects with various functionalities. Currently, it includes the `shortenURL`, `imageToPrompt`, `tikSearch`, and `ytdl` APIs, with plans to add more in the future.
@@ -160,4 +159,3 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 - **Repository**: [@saxx/no-noobs-apis GitHub](https://github.com/MBBXMESBAH/no-noobs-apis)
 - **Issues**: [Submit Issues](https://github.com/MBBXMESBAH/no-noobs-apis/issues)
 - **Homepage**: [@saxx/no-noobs-apis Homepage](https://github.com/MBBXMESBAH/no-noobs-apis#readme)
-```
