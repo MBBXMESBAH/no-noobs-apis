@@ -1,6 +1,8 @@
+---
+
 # NO-NOOBS-APIS
 
-@saxx/no-noobs-apis is a collection of powerful and easy-to-use APIs designed to enhance your projects with various functionalities. Currently, it includes the `shortenURL`, `imageToPrompt`, `tikSearch`, and `ytdl` APIs, with plans to add more in the future.
+`@saxx/no-noobs-apis` is a collection of powerful and easy-to-use APIs designed to enhance your projects with various functionalities. It includes `shortenURL`, `imageToPrompt`, `tikSearch`, `ytdl`, `alldl`, `aiDetector`, `instaSearch`, and `pinSearch`, with plans for more in the future.
 
 <p>
 <a href="https://github.com/MBBXMESBAH"><img title="Author" src="https://img.shields.io/badge/Author-Mesbah%20Saxx-black.svg?style=for-the-badge&logo=github" alt=""></a>
@@ -11,18 +13,33 @@
 ![npm](https://img.shields.io/npm/dw/@saxx/no-noobs-apis)
 ![npm](https://img.shields.io/npm/dt/@saxx/no-noobs-apis)
 
+---
+
+## What's New
+
+### `v1.0.3`
+- **`alldl API`**:
+  - Fixed 404 error handling for a smoother experience.
+- **New Features**:
+  - Added `aiDetector`: Detect AI-generated content with precision.
+  - Added `instaSearch`: Search and retrieve Instagram content.
+  - Added `pinSearch`: Search and retrieve Pinterest content.
+
+---
+
 ## Features
 
 - **imageToPrompt API**: Converts images to textual prompts.
 - **shortenURL API**: Shortens a provided URL.
 - **tikSearch API**: Searches TikTok videos based on a query.
 - **ytdl API**: Retrieves download links for YouTube videos.
-- Easy-to-use API structure for integration into your projects.
+- **alldl API**: Downloads videos from a wide range of sites with detailed metadata.
+- **aiDetector API**: Detects AI-generated text with ease.
+- **instaSearch API**: Fetches Instagram content by search query.
+- **pinSearch API**: Searches Pinterest content and retrieves results.
+- Easy-to-use API structure for seamless integration.
 
-## 📊 Statistics
-
-- **Total Downloads**: ![npm](https://img.shields.io/npm/dt/@saxx/no-noobs-apis)
-- **Weekly Downloads**: ![npm](https://img.shields.io/npm/dw/@saxx/no-noobs-apis)
+---
 
 ## Installation
 
@@ -32,120 +49,190 @@ To install the library, use npm:
 npm install @saxx/no-noobs-apis@latest
 ```
 
+---
+
 ## Usage
 
-Here’s how to use the `@saxx/no-noobs-apis`:
+Here�s how to use `@saxx/no-noobs-apis`:
 
 ### Importing the Library
 
 ```javascript
-const { shortenURL, imageToPrompt, tikSearch, ytdl } = require('@saxx/no-noobs-apis');
+const { shortenURL, imageToPrompt, tikSearch, ytdl, alldl, alldlSupportSite, aiDetector, instaSearch, pinSearch } = require('@saxx/no-noobs-apis');
 ```
 
-### Using the APIs
+### Example Usage
 
+#### Shorten URL
 ```javascript
-// Shorten URL
 shortenURL("https://www.google.com")
-  .then(result => {
-    console.log("Shortened URL:", result);
-  })
-  .catch(error => {
-    console.error("Error shortening URL:", error.message || error);
-  });
-
-// Image to Prompt
-imageToPrompt("https://i.ibb.co/dB0zKZ4/image.jpg")
-  .then(result => {
-    console.log("Image Prompt:", result);
-  })
-  .catch(error => {
-    console.error("Error generating prompt from image:", error.message || error);
-  });
-
-// TikTok Search
-tikSearch("marvel 4k edit", 2)
-  .then(result => {
-    console.log("TikTok Search Results:", result);
-  })
-  .catch(error => {
-    console.error("Error searching TikTok:", error.message || error);
-  });
-
-// YouTube Download
-ytdl("https://youtu.be/fVPDf9UQE3k")
-  .then(result => {
-    console.log("YouTube Download URL:", result);
-  })
-  .catch(error => {
-    console.error("Error downloading YouTube video:", error.message || error);
-  });
+  .then(result => console.log("Shortened URL:", result))
+  .catch(error => console.error("Error shortening URL:", error));
 ```
+
+#### Image to Prompt
+```javascript
+imageToPrompt("https://i.ibb.co/dB0zKZ4/image.jpg")
+  .then(result => console.log("Image Prompt:", result))
+  .catch(error => console.error("Error generating prompt:", error));
+```
+
+#### TikTok Search
+```javascript
+tikSearch("marvel 4k edit", 2)
+  .then(result => console.log("TikTok Results:", result))
+  .catch(error => console.error("Error searching TikTok:", error));
+```
+
+#### YouTube Download
+```javascript
+ytdl("https://youtu.be/fVPDf9UQE3k")
+  .then(result => console.log("YouTube Download URL:", result))
+  .catch(error => console.error("Error downloading YouTube video:", error));
+```
+
+#### All Video Downloader
+```javascript
+alldl("https://www.instagram.com/reel/DDuZosrS9YE/")
+  .then(result => console.log("Alldl Data:", result))
+  .catch(error => console.error("Error fetching video:", error));
+```
+
+#### Supported Sites for Video Downloads
+```javascript
+alldlSupportSite()
+  .then(result => console.log("Supported Sites:", result))
+  .catch(error => console.error("Error fetching supported sites:", error));
+```
+
+#### AI Detector
+```javascript
+aiDetector("How can I help you today?")
+  .then(result => console.log("AI Detector Result:", result))
+  .catch(error => console.error("Error detecting AI content:", error));
+```
+
+#### Instagram Search
+```javascript
+instaSearch("nature photography")
+  .then(result => console.log("Instagram Search Results:", result))
+  .catch(error => console.error("Error searching Instagram:", error));
+```
+
+#### Pinterest Search
+```javascript
+pinSearch("cat", 5)
+  .then(result => console.log("Pinterest Search Results:", result))
+  .catch(error => console.error("Error searching Pinterest:", error));
+```
+
+---
 
 ## API Reference
 
 ### `shortenURL(url: string)`
-
 Shortens a URL.
-
-- **Parameters**:
-  - `url` (string): The URL to shorten.
-- **Returns**: A shortened version of the URL.
+- **Parameters**:  
+  `url` (string): The URL to shorten.  
+- **Returns**: Shortened URL as a string.
 
 ---
 
 ### `imageToPrompt(imageUrl: string)`
-
 Converts an image URL to a textual prompt.
-
-- **Parameters**:
-  - `imageUrl` (string): The URL of the image to convert.
-- **Returns**: A textual prompt based on the image.
-- **Throws**: An error if the image is not found or if there is an issue with the API.
+- **Parameters**:  
+  `imageUrl` (string): The URL of the image.  
+- **Returns**: Textual description based on the image.
 
 ---
 
 ### `tikSearch(query: string, count: number)`
-
-Searches TikTok for videos based on a query.
-
-- **Parameters**:
-  - `query` (string): The search query (e.g., "marvel 4k edit").
-  - `count` (number): The number of results to fetch.
+Searches TikTok videos based on a query.
+- **Parameters**:  
+  `query` (string): Search query.  
+  `count` (number): Number of results to fetch.  
 - **Returns**: A list of TikTok video results.
-- **Throws**: An error if the search fails.
 
 ---
 
 ### `ytdl(videoUrl: string)`
-
 Fetches download links for a YouTube video.
+- **Parameters**:  
+  `videoUrl` (string): The YouTube video URL.  
+- **Returns**: Download links for the video.
 
-- **Parameters**:
-  - `videoUrl` (string): The URL of the YouTube video.
-- **Returns**: The download link for the video.
-- **Throws**: An error if the video URL is invalid or if there is an issue with the API.
+---
+
+### `alldl(videoUrl: string)`
+Downloads a video from the given URL.
+- **Parameters**:  
+  `videoUrl` (string): The video URL.  
+- **Returns**: Metadata and download URL for the video.
+
+---
+
+### `alldlSupportSite()`
+Retrieves a list of supported sites for `alldl`.
+- **Returns**: An array of supported site domains.
+
+---
+
+### `aiDetector(content: string)`
+Detects AI-generated content in a given text.
+- **Parameters**:  
+  `content` (string): Text to analyze.  
+- **Returns**: Detection results with probabilities.
+
+---
+
+### `instaSearch(query: string)`
+Searches Instagram for content based on a query.
+- **Parameters**:  
+  `query` (string): Search query.  
+- **Returns**: Instagram search results.
+
+---
+
+### `pinSearch(query: string, count: number)`
+Searches Pinterest for content.
+- **Parameters**:  
+  `query` (string): Search query.  
+  `count` (number): Number of results to fetch.  
+- **Returns**: Pinterest search results.
 
 ---
 
 ## Error Handling
 
-The library provides meaningful error messages for issues such as:
-- Image not found.
-- Invalid YouTube video URL.
-- Network errors while accessing the APIs.
+The library provides descriptive error messages for:
+- Invalid input data.
+- Network issues.
+- API errors.
+
+---
 
 ## Dependencies
 
-- [axios](https://www.npmjs.com/package/axios) for making HTTP requests.
+The project uses the following dependencies:
+
+- [axios](https://www.npmjs.com/package/axios): For making HTTP requests.
+- [cheerio](https://www.npmjs.com/package/cheerio): For parsing and manipulating HTML in Node.js.
+- [form-data](https://www.npmjs.com/package/form-data): For creating and handling `multipart/form-data` streams.
+- [fs](https://www.npmjs.com/package/fs): For interacting with the file system.
+- [path](https://www.npmjs.com/package/path): For working with file and directory paths.
+---
 
 ## Contributing
 
-Contributions are welcome! If you have any ideas, improvements, or bug fixes, feel free to submit a pull request or open an issue on GitHub.
+Contributions are welcome! Submit issues or pull requests on [GitHub](https://github.com/MBBXMESBAH/no-noobs-apis).
+
+---
 
 ## License
 
-This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Author
 
@@ -156,6 +243,7 @@ This project is licensed under the ISC License. See the [LICENSE](LICENSE) file 
 
 ## Links
 
-- **Repository**: [@saxx/no-noobs-apis GitHub](https://github.com/MBBXMESBAH/no-noobs-apis)
-- **Issues**: [Submit Issues](https://github.com/MBBXMESBAH/no-noobs-apis/issues)
-- **Homepage**: [@saxx/no-noobs-apis Homepage](https://github.com/MBBXMESBAH/no-noobs-apis#readme)
+- **Repository**: [GitHub](https://github.com/MBBXMESBAH/no-noobs-apis)  
+- **Issues**: [Submit Issues](https://github.com/MBBXMESBAH/no-noobs-apis/issues)  
+
+---

@@ -1,4 +1,4 @@
-const { shortenURL, imageToPrompt, tikSearch, ytdl } = require('../src/index');
+const { shortenURL, imageToPrompt, tikSearch, ytdl, alldl, alldlSupportSite, aiDetector, instaSearch, pinSearch, } = require('./no-noobs-apis.js');
 
 // Shorten URL
 shortenURL("https://www.google.com")
@@ -34,4 +34,49 @@ ytdl("https://youtu.be/fVPDf9UQE3k")
   })
   .catch(error => {
     console.error("Error downloading YouTube video:", error.message || error);
+  });
+
+// All video downloader
+alldl("https://www.instagram.com/reel/DDuZosrS9YE/")
+  .then(result => {
+    console.log("Alldl data:", result);
+  })
+  .catch(error => {
+    console.error("Error fetching alldl video:", error.message || error);
+  });
+
+// All video downloader support site
+alldlSupportSite()
+  .then(result => {
+    console.log("Supported Sites:", result);
+  })
+  .catch(error => {
+    console.error("Error fetching alldl video support site:", error.message || error);
+  });
+
+// AI Detector
+aiDetector("How can I help you today?")
+  .then(result => {
+    console.log("AI Detector Result:", result);
+  })
+  .catch(error => {
+    console.error("Error detecting AI content:", error.message || error);
+  });
+
+// Instagram Search
+instaSearch("nature photography")
+  .then(result => {
+    console.log("Instagram Search Results:", result);
+  })
+  .catch(error => {
+    console.error("Error searching Instagram:", error.message || error);
+  });
+
+// Pinterest Search
+pinSearch("cat", 5)
+  .then(result => {
+    console.log("Pinterest Search Results:", result);
+  })
+  .catch(error => {
+    console.error("Error searching Pinterest:", error.message || error);
   });
